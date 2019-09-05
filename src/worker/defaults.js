@@ -12,10 +12,10 @@
  */
 
 export default {
-  width: 300,
-  height: 150,
-  timebaseNum: 1,
-  timebaseDen: 30,
-  bitrate: 200,
-  realtime: false
+	width: 300,
+	height: 150,
+	timebaseNum: 1,
+	timebaseDen: 30,
+	bitrate: 200,
+	realtime: false
 };

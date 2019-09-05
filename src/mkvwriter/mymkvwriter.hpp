@@ -24,25 +24,26 @@
 
 using namespace emscripten;
 
-class MyMkvWriter : public mkvmuxer::IMkvWriter {
- public:
-  explicit MyMkvWriter(val cb);
-  virtual ~MyMkvWriter();
+class MyMkvWriter : public mkvmuxer::IMkvWriter
+{
+public:
+	explicit MyMkvWriter(val cb);
+	virtual ~MyMkvWriter();
 
-  virtual int64_t Position() const;
-  virtual int32_t Position(int64_t position);
-  virtual bool Seekable() const;
-  virtual int32_t Write(const void* buffer, uint32_t length);
-  virtual void ElementStartNotify(uint64_t element_id, int64_t position);
+	virtual int64_t Position() const;
+	virtual int32_t Position(int64_t position);
+	virtual bool Seekable() const;
+	virtual int32_t Write(const void *buffer, uint32_t length);
+	virtual void ElementStartNotify(uint64_t element_id, int64_t position);
 
-  void Notify();
+	void Notify();
 
- private:
-  uint8_t* buf;
-  uint64_t pos;
-  uint64_t len;
-  uint64_t cap;
-  val cb;
+private:
+	uint8_t *buf;
+	uint64_t pos;
+	uint64_t len;
+	uint64_t cap;
+	val cb;
 };
 
-#endif  // MYMKVWRITER_HPP
+#endif // MYMKVWRITER_HPP
